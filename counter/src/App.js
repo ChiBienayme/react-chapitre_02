@@ -1,72 +1,23 @@
 import React from 'react';
+
 import './App.css';
-import "./styles/global.css"
-import Counter from "./components/Counter"
+import "./styles/Counter.css"
 
-// Counter V1
-// class App extends React.Component {
-//   constructor() {
-//     super();
-
-//     this.state = {
-//       count: 0
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div className="counter1">
-//         <h1>Counter 1</h1>
-        
-//         <div>
-//           <button className='substract' 
-//                   style = {{backgroundColor: "green"}}
-//                   onClick={() => 
-//                   this.setState({
-//                     count: this.state.count -1
-//                   })}
-//                 > - 
-//           </button>
-
-//           <h2>{this.state.count}</h2>
-
-//           <button className='increment' 
-//                   style = {{backgroundColor: "red"}}
-//                   onClick={() => 
-//                   this.setState({
-//                     count: this.state.count +1
-//                     })}
-//                 > +
-//           </button>
-//         </div>
-
-//       </div>
+import Counter1 from "./components/Counter1"
+import Counter2 from "./components/Counter2";
 
 
-//     )
-//   }
-// }
 
-// Counter V2
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = { 
-      count:0
-    };
-  }
-
   render() {
     return (
       <div>
-        <Counter increment = {this.state.count} /> - 
-
-        <h2>{this.state.count -1}</h2>
-
-        <Counter substract = {this.state.count} /> + 
+        <h1>Counter</h1>
+        <Counter1 increment="+" substract="-" />
+        <Counter2 increment="+" substract="-" />
+        
       </div>
-    )
+    );
   }
 }
 
