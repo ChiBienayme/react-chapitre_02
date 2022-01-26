@@ -1,22 +1,24 @@
 import React from "react";
-import Users from "./components/users.json"
 
+import "./App.css";
+
+import users from "./users.json";
+
+import UserInfo from "./components/UserInfo";
+
+const data = users.map((user) => {
+  return (
+    <UserInfo name={user.name} email={user.email} website={user.website} />
+  );
+});
 
 class App extends React.Component {
-  
-
   render() {
     return (
       <div>
-        {this.state.users.map((Users) => {
-          return (
-            <div> 
-              <Users Name = {this.props.Users.name}/>
-              <Users Email = {this.props.Users.email}/>
-              <Users Website = {this.props.Users.website}/>
-            </div>
-          );
-        })}
+        <div>
+          <ul>{data}</ul>
+        </div>
       </div>
     );
   }
